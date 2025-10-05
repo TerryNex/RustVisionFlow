@@ -1,4 +1,4 @@
-# AutoAI-RS（暫名）：Rust + egui 視覺化 AI 自動化協作框架
+# RustVisionFlow：Rust + egui 視覺化 AI 自動化協作框架
 
 ## 專案簡介
 
@@ -44,4 +44,4 @@ cargo run --bin app
 
 ## 許可協議
 
-MIT License
+[MIT License]()
