@@ -44,4 +44,4 @@ cargo run --bin app
 
 ## 許可協議
 
-[MIT License]()
+[MIT License](LICENSE)
