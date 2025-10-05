@@ -35,8 +35,8 @@ cargo run --bin app
 - `yolo/` —— YOLOv10/ONNX AI 推論模組
 - `ui/` —— egui 流程編輯 GUI
 - `app/` —— 整合主程式啟動點
-- `models/` —— AI 模型資料夾
-- `flows/` —— 流程腳本存放
+- `models/` —— AI 模型資料夾 (暫定)
+- `flows/` —— 流程腳本存放 (暫定)
 
 ## 開源社群
 
