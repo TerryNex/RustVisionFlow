@@ -1,0 +1,13 @@
+[env]
+# 告訴 onnxruntime-sys 直接使用系統安裝的 ORT，不下載 prebuilt
+ORT_STRATEGY = { value = "system", force = true }
+
+# Homebrew 的 onnxruntime 路徑
+ORT_LIB_LOCATION = { value = "/opt/homebrew/opt/onnxruntime", force = true }
+ORT_INCLUDE_DIR = { value = "/opt/homebrew/opt/onnxruntime/include", force = true }
+
+
+# alias
+[alias]
+# cargo run -p app
+r = "run -p app"

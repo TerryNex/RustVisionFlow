@@ -1,0 +1,18 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# 透過 workspace 集中管理版本與 path
+base = { workspace = true }
+workflow = { workspace = true }
+yolo = { workspace = true }
+ui = { workspace = true }
+
+#  需要用到的外部庫也用 workspace 繼承
+egui = { workspace = true }
+eframe = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+log = { workspace = true }

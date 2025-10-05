@@ -1,0 +1,14 @@
+[package]
+name = "base"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+image = { workspace = true }
+onnxruntime = { workspace = true }
+rdev = { workspace = true }
+anyhow = "1.0.100"
+
+[lib]
+name = "base"
+path = "src/lib.rs"

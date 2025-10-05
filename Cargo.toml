@@ -1,0 +1,101 @@
+#[package]
+#name = "RustVisionFlow"
+#version = "0.1.0"
+#edition = "2024"
+
+#[dependencies]
+## 引用工作空間內的其他 crate
+#base = { path = "base", version = "0.1.0" }
+#workflow = { path = "workflow", version = "0.1.0" }
+#yolo = { path = "yolo", version = "0.1.0" }
+#ui = { path = "ui", version = "0.1.0" }
+#
+## 其他共享依賴
+#serde.workspace = true
+#anyhow.workspace = true
+#log.workspace = true
+
+
+[workspace]
+resolver = "3"
+members = [
+    "base",
+    "workflow",
+    "yolo",
+    "ui",
+    "app",
+]
+
+[workspace.dependencies]
+# 引用工作空間內的其他 crate
+base = { path = "base", version = "0.1.0" }
+workflow = { path = "workflow", version = "0.1.0" }
+yolo = { path = "yolo", version = "0.1.0" }
+ui = { path = "ui", version = "0.1.0" }
+
+#序列化相關
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+ron = "0.11.0"
+
+# GUI 相關
+egui = "0.32.3"
+eframe = { version = "0.32.3", default-features = false, features = [
+    "accesskit", # Make egui comptaible with screen readers. NOTE: adds a lot of dependencies.
+    "default_fonts", # Embed the default egui fonts.
+    "glow", # Use glow rendering backend. Alternative: "wgpu".
+    "persistence", # Enable restoring app state when restarting the app.
+] }
+
+# 圖像處理與螢幕操作
+image = "0.25.8"
+screenshots = "0.8.10"
+rdev = "0.5.3"
+
+# AI/ML 推論
+onnxruntime = "0.0.14"
+
+# 異步運行時
+tokio = { version = "1.47.1", features = ["full"] }
+
+# 日誌和錯誤處理
+log = "0.4.28"
+env_logger = "0.11.8"
+anyhow = "1.0.100"
+thiserror = "2.0.17"
+
+# 其他工具
+chrono = { version = "0.4.42", features = ["serde"] }
+uuid = { version = "1.18.1", features = ["v4", "serde"] }
+
+[workspace.metadata]
+# 專案元數據
+authors = ["Terry.he <terry.hhl@icloud.com>"]
+description = "Visual AI-powered automation framework with Rust and egui"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/TerryNEX/RustVisionFlow"
+homepage = "https://github.com/TerryNEX/RustVisionFlow"
+#documentation = "https://docs.rs/RustVisionFlow"
+keywords = ["automation", "ai", "yolo", "gui", "workflow", "egui"]
+categories = ["computer-vision", "gui", "automation"]
+
+# 統一的編譯設置
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+codegen-units = 1
+panic = "abort"
+
+#[features]
+
+#[[example]]
+
+[profile.dev.package."*"]
+opt-level = 2
